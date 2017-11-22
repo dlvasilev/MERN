@@ -44,7 +44,7 @@ class Signup extends Component {
 
     return (
       <fieldset className={className}>
-        <label>{label}</label>
+        <label>{label}: </label>
         <input
           {...input}
           placeholder={label}
@@ -61,19 +61,22 @@ class Signup extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        {_.map(FIELDS, (field, fieldName) => {
-          return (
-            <Field
-              name={fieldName}
-              component={this.renderField}
-              key={fieldName}
-              {...field} />
-          );
-        })}
-        {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign up</button>
-      </form>
+      <div className="row">
+        <form className="col-md-4 col-md-offset-4"
+          onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          {_.map(FIELDS, (field, fieldName) => {
+            return (
+              <Field
+                name={fieldName}
+                component={this.renderField}
+                key={fieldName}
+                {...field} />
+            );
+          })}
+          {this.renderAlert()}
+          <button action="submit" className="btn btn-primary">Sign up</button>
+        </form>
+      </div>
     );
   }
 }

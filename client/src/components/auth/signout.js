@@ -10,7 +10,7 @@ class Signout extends Component {
   render() {
     return (
       <div>
-        <h3>Sorry, to see you go...</h3>
+        <p>Sorry, to see you go...</p>
       </div>
     );
   }
