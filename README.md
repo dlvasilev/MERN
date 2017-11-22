@@ -1,2 +1,3 @@
-# NERRM
-Nodejs, Express, React, Redux and MongoDB App Starter
+# NERM
+
+Node.js, Express, React & Redux and MongoDB App Starter

@@ -1,7 +1,7 @@
 {
-  "name": "nerrm-api-server",
+  "name": "nerm-api-server",
   "version": "1.0.0",
-  "description": "NERRM API Server",
+  "description": "NERM API Server",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",

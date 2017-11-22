@@ -28,7 +28,7 @@ class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-light">
-        <Link to="/" className="navbar-brand">NERRM</Link>
+        <Link to="/" className="navbar-brand">NERM</Link>
         <ul className="nav navbar-nav">
           {this.renderLinks()}
         </ul>

@@ -1,6 +1,6 @@
-# NERRM Web Client
+# NERM Web Client
 
-NERRM: React Redux side
+NERM: React Redux side
 
 # To run Web Client use
 ` npm run start `

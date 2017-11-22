@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-mongoose.connect('mongodb://localhost/nerrm', {
+mongoose.connect('mongodb://localhost/nerm', {
   useMongoClient: true
 });
 

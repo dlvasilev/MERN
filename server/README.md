@@ -1,6 +1,6 @@
-# NERRM API Server
+# NERM API Server
 
-NERRM: Node.js, Express and MongoDB Side
+NERM: Node.js, Express and MongoDB Side
 API Based with JWT Token Authentication
 
 # To run API Server use

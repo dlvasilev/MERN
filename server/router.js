@@ -7,7 +7,7 @@ const requireSignin = passport.authenticate('local', { session: false });
 
 module.exports = function(app) {
   app.get('/', function(req, res, next) {
-    res.send({ message: 'NERRM server entrance...'});
+    res.send({ message: 'NERM server entrance...'});
   });
 
   app.get('/user', requireAuth, function(req, res, next) {
