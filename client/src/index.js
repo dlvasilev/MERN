@@ -19,8 +19,8 @@ const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
 
 const token = localStorage.getItem('token');
-if(token) {
-  store.dispatch({ type: AUTH_USER })
+if (token) {
+  store.dispatch({ type: AUTH_USER });
 }
 
 ReactDOM.render(
@@ -34,5 +34,6 @@ ReactDOM.render(
         <Route path="user" component={RequireAuth(User)} />
       </Route>
     </Router>
-  </Provider>
-  , document.querySelector('.container'));
+  </Provider>,
+  document.querySelector('.container')
+);

@@ -8,9 +8,7 @@ class User extends Component {
   }
 
   render() {
-    return (
-      <div>Your {this.props.user.username}</div>
-    )
+    return <div>Your {this.props.user.username}</div>;
   }
 }
 

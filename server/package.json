@@ -1,7 +1,7 @@
 {
-  "name": "nerm-api-server",
+  "name": "mern-api-server",
   "version": "1.0.0",
-  "description": "NERM API Server",
+  "description": "MERN API Server",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",

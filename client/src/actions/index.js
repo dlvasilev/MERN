@@ -1,24 +1,24 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import {
-  AUTH_USER,
-  UNAUTH_USER,
-  AUTH_ERROR,
-  FETCH_USERDATA
-} from './types';
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, FETCH_USERDATA } from './types';
 
 const SERVER_URL = 'http://localhost:3000';
 
 export function signinUser(userData) {
-  return (dispatch) => {
-    authUser(dispatch, 'signin', userData, 'The email or password is not correct');
-  }
+  return dispatch => {
+    authUser(
+      dispatch,
+      'signin',
+      userData,
+      'The email or password is not correct'
+    );
+  };
 }
 
 export function signupUser(userData) {
-  return (dispatch) => {
-    authUser(dispatch, 'signup', userData)
-  }
+  return dispatch => {
+    authUser(dispatch, 'signup', userData);
+  };
 }
 
 export function signoutUser() {
@@ -30,7 +30,7 @@ export function authError(error) {
   return {
     type: AUTH_ERROR,
     payload: error
-  }
+  };
 }
 
 function authUser(dispatch, endpoint, { email, password }, errorMessage) {
@@ -47,7 +47,7 @@ function authUser(dispatch, endpoint, { email, password }, errorMessage) {
 }
 
 export function fetchMessage() {
-  return (dispatch) => {
+  return dispatch => {
     axios
       .get(`${SERVER_URL}/user`, {
         headers: { authorization: localStorage.getItem('token') }
@@ -56,12 +56,12 @@ export function fetchMessage() {
         dispatch({
           type: FETCH_USERDATA,
           payload: response.data
-        })
+        });
       })
       .catch(error => {
-        if(error.response.status === 401) {
-          dispatch({ type: UNAUTH_USER })
+        if (error.response.status === 401) {
+          dispatch({ type: UNAUTH_USER });
         }
       });
-  }
+  };
 }

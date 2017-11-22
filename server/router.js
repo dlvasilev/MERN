@@ -7,7 +7,7 @@ const requireSignin = passport.authenticate('local', { session: false });
 
 module.exports = function(app) {
   app.get('/', function(req, res, next) {
-    res.send({ message: 'NERM server entrance...'});
+    res.send({ message: 'MERN server entrance...' });
   });
 
   app.get('/user', requireAuth, function(req, res, next) {
@@ -16,4 +16,4 @@ module.exports = function(app) {
 
   app.post('/signin', requireSignin, Authentication.signin);
   app.post('/signup', Authentication.signup);
-}
+};

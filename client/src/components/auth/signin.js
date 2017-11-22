@@ -34,21 +34,20 @@ class Signin extends Component {
           {...input}
           placeholder={label}
           type={type}
-          className="form-control"  />
-        <div className="text-help">
-          {touched ? error : ''}
-        </div>
+          className="form-control"
+        />
+        <div className="text-help">{touched ? error : ''}</div>
       </fieldset>
     );
   }
 
   renderAlert() {
-    if(this.props.errorMessage) {
+    if (this.props.errorMessage) {
       return (
         <div className="alert alert-danger">
           <strong>Oops!</strong> {this.props.errorMessage}
         </div>
-      )
+      );
     }
   }
 
@@ -57,20 +56,24 @@ class Signin extends Component {
 
     return (
       <div className="row">
-
-        <form className="col-md-4 col-md-offset-4"
-          onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <form
+          className="col-md-4 col-md-offset-4"
+          onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
+        >
           {_.map(FIELDS, (field, fieldName) => {
             return (
               <Field
                 name={fieldName}
                 component={this.renderField}
                 key={fieldName}
-                {...field} />
+                {...field}
+              />
             );
           })}
           {this.renderAlert()}
-          <button action="submit" className="btn btn-primary">Submit</button>
+          <button action="submit" className="btn btn-primary">
+            Submit
+          </button>
         </form>
       </div>
     );
@@ -81,7 +84,7 @@ function validate(formProps) {
   const errors = {};
 
   _.each(FIELDS, (field, fieldName) => {
-    if(!formProps[fieldName]) {
+    if (!formProps[fieldName]) {
       errors[fieldName] = field.errorMsg;
     }
   });
@@ -96,6 +99,4 @@ function mapStateToProps(state) {
 export default reduxForm({
   validate,
   form: 'signin'
-})(
-  connect(mapStateToProps, actions)(Signin)
-);
+})(connect(mapStateToProps, actions)(Signin));

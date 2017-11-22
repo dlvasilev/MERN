@@ -28,12 +28,12 @@ class Signup extends Component {
   }
 
   renderAlert() {
-    if(this.props.errorMessage) {
+    if (this.props.errorMessage) {
       return (
         <div className="alert alert-danger">
           <strong>Oops!</strong> {this.props.errorMessage}
         </div>
-      )
+      );
     }
   }
 
@@ -49,10 +49,9 @@ class Signup extends Component {
           {...input}
           placeholder={label}
           type={type}
-          className="form-control"  />
-        <div className="text-help">
-          {touched ? error : ''}
-        </div>
+          className="form-control"
+        />
+        <div className="text-help">{touched ? error : ''}</div>
       </fieldset>
     );
   }
@@ -62,19 +61,24 @@ class Signup extends Component {
 
     return (
       <div className="row">
-        <form className="col-md-4 col-md-offset-4"
-          onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <form
+          className="col-md-4 col-md-offset-4"
+          onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
+        >
           {_.map(FIELDS, (field, fieldName) => {
             return (
               <Field
                 name={fieldName}
                 component={this.renderField}
                 key={fieldName}
-                {...field} />
+                {...field}
+              />
             );
           })}
           {this.renderAlert()}
-          <button action="submit" className="btn btn-primary">Sign up</button>
+          <button action="submit" className="btn btn-primary">
+            Sign up
+          </button>
         </form>
       </div>
     );
@@ -82,14 +86,14 @@ class Signup extends Component {
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error }
+  return { errorMessage: state.auth.error };
 }
 
 function validate(formProps) {
   const errors = {};
 
   _.each(FIELDS, (field, fieldName) => {
-    if(!formProps[fieldName]) {
+    if (!formProps[fieldName]) {
       errors[fieldName] = field.errorMsg;
     }
   });
@@ -104,6 +108,4 @@ function validate(formProps) {
 export default reduxForm({
   validate,
   form: 'signup'
-})(
-  connect(mapStateToProps, actions)(Signup)
-);
+})(connect(mapStateToProps, actions)(Signup));

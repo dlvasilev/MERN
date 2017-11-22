@@ -1,11 +1,12 @@
 {
-  "name": "nerm-web-client",
+  "name": "mern-web-client",
   "version": "1.0.0",
-  "description": "NERM Web Client",
+  "description": "MERN Web Client",
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test":
+      "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
   "author": "",
